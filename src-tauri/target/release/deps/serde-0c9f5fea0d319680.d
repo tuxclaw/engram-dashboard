@@ -1,0 +1,14 @@
+/var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/deps/serde-0c9f5fea0d319680.d: /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/build/serde-c8ab2b5d5b7641b9/out/private.rs
+
+/var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/deps/libserde-0c9f5fea0d319680.rlib: /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/build/serde-c8ab2b5d5b7641b9/out/private.rs
+
+/var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/deps/libserde-0c9f5fea0d319680.rmeta: /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/build/serde-c8ab2b5d5b7641b9/out/private.rs
+
+/home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/tux/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/build/serde-c8ab2b5d5b7641b9/out/private.rs:
+
+# env-dep:OUT_DIR=/var/home/tux/.openclaw/workspace/projects/engram-tauri/src-tauri/target/release/build/serde-c8ab2b5d5b7641b9/out
