@@ -14,11 +14,16 @@ struct BackendProcess {
 
 impl BackendProcess {
     fn spawn() -> Result<Self, String> {
+        let server_dir = std::path::Path::new(SERVER_PATH)
+            .parent()
+            .unwrap_or(std::path::Path::new("."));
+
         let child = Command::new("python3")
             .arg(SERVER_PATH)
+            .current_dir(server_dir)
             .env("ENGRAM_DASHBOARD_PORT", "3460")
-            .stdout(Stdio::null())
-            .stderr(Stdio::null())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
             .spawn()
             .map_err(|err| format!("Failed to start backend: {err}"))?;
 
