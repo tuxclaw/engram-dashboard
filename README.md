@@ -1,19 +1,24 @@
 # 🧠 Engram Dashboard
 
-A desktop knowledge graph explorer for [Engram](https://github.com/tuxclaw/engram) — a temporal memory system that stores entities, facts, episodes, emotions, and sessions as a connected graph.
+A native desktop dashboard for [Engram](https://github.com/Atomlaunch/engram) — a temporal knowledge graph memory system by [Atomlaunch](https://github.com/Atomlaunch).
 
-Built with **Tauri 2.x** (Rust) wrapping a **FastAPI** (Python) backend and a vanilla **HTML/JS/CSS** frontend.
+This project is a **Tauri 2.x desktop app** that wraps Engram's FastAPI dashboard with a native window, themed UI, and auto-managed backend. We didn't build Engram itself — just a nice Rust desktop shell with dark themes for exploring the graph.
 
-![Engram Dashboard](https://img.shields.io/badge/Tauri-2.x-blue?logo=tauri) ![Python](https://img.shields.io/badge/Python-3.10+-yellow?logo=python) ![Neo4j](https://img.shields.io/badge/Neo4j-5.x-green?logo=neo4j)
+![Tauri](https://img.shields.io/badge/Tauri-2.x-blue?logo=tauri) ![Python](https://img.shields.io/badge/Python-3.10+-yellow?logo=python) ![Neo4j](https://img.shields.io/badge/Neo4j-5.x-green?logo=neo4j)
 
-## Features
+## What This Adds
+
+- **Native desktop window** — no browser tab needed
+- **Auto-managed backend** — Rust spawns the Python server on launch, kills it on close
+- **Themes** — Dark (default), Dracula, and Nord color schemes
+- **Styled dropdowns & UI** — WebKitGTK-friendly dark theme overrides
+
+## Features (from Engram)
 
 - **Overview** — Stats, node type breakdown, recent activity timeline
-- **Graph Explorer** — Interactive node graph powered by Sigma.js, click to explore neighbors, filter by type
-- **Browse** — Search and filter entities, facts, episodes, emotions across the knowledge graph
-- **Multi-agent support** — Filter data by agent (Andy, Jarvis, etc.)
-- **Themes** — Dark (default), Dracula, and Nord color schemes
-- **Desktop native** — Tauri app with auto-managed Python backend
+- **Graph Explorer** — Interactive node graph (Sigma.js), click to explore neighbors, filter by type
+- **Browse** — Search and filter entities, facts, episodes, emotions
+- **Multi-agent support** — Filter by agent (Andy, Jarvis, etc.)
 
 ## Architecture
 
@@ -27,16 +32,14 @@ Built with **Tauri 2.x** (Rust) wrapping a **FastAPI** (Python) backend and a va
          │
 ┌────────▼────────────────┐
 │   FastAPI (Python)      │
-│   - REST API            │
-│   - Serves static UI    │
+│   - Engram dashboard    │
+│   - REST API + static   │
 │   - Port 3460           │
 └────────┬────────────────┘
          │
 ┌────────▼────────────────┐
 │   Neo4j (Graph DB)      │
-│   - Entities, Facts     │
-│   - Episodes, Emotions  │
-│   - Relationships       │
+│   - Engram data store   │
 └─────────────────────────┘
 ```
 
@@ -45,52 +48,31 @@ Built with **Tauri 2.x** (Rust) wrapping a **FastAPI** (Python) backend and a va
 - **Rust** (stable) + Cargo
 - **Python 3.10+** with pip
 - **Neo4j 5.x** running on `bolt://localhost:7687`
+- **Engram** — [github.com/Atomlaunch/engram](https://github.com/Atomlaunch/engram) installed and configured
 - **System libs** (Linux): `libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, etc. ([Tauri prerequisites](https://v2.tauri.app/start/prerequisites/))
 
 ## Setup
 
-### 1. Install Python dependencies
+### 1. Install Engram
+
+Follow the setup at [github.com/Atomlaunch/engram](https://github.com/Atomlaunch/engram). Make sure Neo4j is running and Engram's `config.json` is configured.
+
+### 2. Install Python dependencies
 
 ```bash
 pip install fastapi uvicorn neo4j
 ```
 
-### 2. Configure Neo4j
-
-The backend reads from `engram/config.json` (parent of the dashboard directory). Example:
-
-```json
-{
-  "neo4j": {
-    "uri": "bolt://localhost:7687",
-    "user": "neo4j",
-    "password": "your-password"
-  }
-}
-```
-
 ### 3. Build & Run
 
 ```bash
-# Clone
 git clone https://github.com/tuxclaw/engram-dashboard.git
 cd engram-dashboard
 
 # Build the Tauri app
 cargo tauri build
 
-# The binary will be at:
-# src-tauri/target/release/engram-tauri
-```
-
-Or run in dev mode:
-
-```bash
-# Start the Python backend manually
-cd /path/to/engram/dashboard && python server.py
-
-# Then run Tauri dev
-cargo tauri dev
+# Binary at: src-tauri/target/release/engram-tauri
 ```
 
 ### 4. Install (Linux)
@@ -99,7 +81,7 @@ cargo tauri dev
 cp src-tauri/target/release/engram-tauri ~/.local/bin/engram
 ```
 
-## API Endpoints
+## API Endpoints (Engram Dashboard)
 
 | Endpoint | Description |
 |----------|-------------|
@@ -115,11 +97,16 @@ cp src-tauri/target/release/engram-tauri ~/.local/bin/engram
 ## Tech Stack
 
 - **Desktop:** Tauri 2.x (Rust)
-- **Backend:** FastAPI + uvicorn (Python)
-- **Database:** Neo4j 5.x (Bolt protocol)
+- **Backend:** FastAPI + uvicorn (Python) — from Engram
+- **Database:** Neo4j 5.x (Bolt protocol) — from Engram
 - **Frontend:** Vanilla HTML/JS/CSS, Sigma.js v2 + Graphology
 - **Icons:** Font Awesome 6
 - **Fonts:** Inter (Google Fonts)
+
+## Credits
+
+- **Engram** by [Atomlaunch](https://github.com/Atomlaunch/engram) — the memory system and dashboard backend
+- **This repo** — Tauri desktop wrapper, theme system, and UI polish by [tuxclaw](https://github.com/tuxclaw)
 
 ## License
 
